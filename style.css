@@ -12,3 +12,10 @@
    font-weight: 400;
    font-style: normal;
 }
+
+.active {
+   padding: 5px 12px;
+   border: 2px solid #422ad5;
+   background-color: #422ad5;
+   color: white;
+}

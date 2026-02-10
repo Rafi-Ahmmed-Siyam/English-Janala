@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>English Janala</title>
       <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon" />
-      <link rel="stylesheet" href="./style.css" />
+
       <script
          src="https://kit.fontawesome.com/bdccf4bc08.js"
          crossorigin="anonymous"
@@ -16,6 +16,7 @@
          rel="stylesheet"
          type="text/css"
       />
+      <link rel="stylesheet" href="./style.css" />
       <script src="https://cdn.tailwindcss.com"></script>
    </head>
    <body class="container mx-auto poppins-font">
@@ -92,29 +93,57 @@
                >
                   <!-- Dynamic level buttons -->
                </div>
-               <!-- Lesson container -->
-               <div class="bg-gray-100 p-8 rounded-xl mt-10">
-                  <!-- If content is not available -->
-                  <div>
-                     <p
-                        class="siliguri-font text-md text-center text-[#79716B]"
+               <!-- Search div -->
+               <div class="w-full max-w-sm min-w-[200px] mx-auto mt-10">
+                  <div class="relative">
+                     <input
+                        id="search-input"
+                        class="w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md pl-3 pr-28 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow"
+                        placeholder="Search Word..."
+                     />
+                     <button
+                        id="search-btn"
+                        class="absolute top-1 right-1 flex items-center rounded bg-[#422AD5] py-1 px-2.5 border border-transparent text-center text-sm text-white transition-all shadow-sm disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                        type="button"
                      >
-                        আপনি এখনো কোন Lesson Select করেন ন
-                     </p>
-                     <p
-                        class="siliguri-font text-3xl text-black text-center mt-4"
-                     >
-                        একটি Lesson Select করুন।
-                     </p>
+                        Search
+                     </button>
                   </div>
-                  <!-- IF content is available -->
+               </div>
+               <!-- Spinner div -->
+               <div
+                  id="spinner"
+                  class="flex justify-center items-center mt-14 hidden"
+               >
+                  <span class="loading loading-bars loading-xl"></span>
+               </div>
+
+               <!-- Lesson container -->
+               <div
+                  id="lesson-main-container"
+                  class="bg-gray-100 p-8 rounded-xl mt-10"
+               >
                   <div
                      id="lesson-words-container"
                      class="grid grid-cols-3 items-center gap-5"
                   >
-                     <!-- Dynamic cards -->
+                     <!-- If content is not available -->
+                     <div class="col-span-full">
+                        <p
+                           class="siliguri-font text-md text-center text-[#79716B]"
+                        >
+                           আপনি এখনো কোন Lesson Select করেন ন
+                        </p>
+                        <p
+                           class="siliguri-font text-3xl text-black text-center mt-4"
+                        >
+                           একটি Lesson Select করুন।
+                        </p>
+                        <!-- Dynamic cards -->
+                     </div>
                   </div>
                </div>
+               <!-- IF content is available -->
             </div>
          </section>
 
@@ -196,6 +225,13 @@
             </div>
          </div>
       </footer>
+
+      <!-- Learning Modal -->
+      <dialog id="my_modal_1" class="modal">
+         <div id="modal-container" class="modal-box">
+            <!-- Dynamic modal -->
+         </div>
+      </dialog>
 
       <script src="./scripts/index.js"></script>
    </body>
